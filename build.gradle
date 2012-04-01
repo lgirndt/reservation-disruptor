@@ -1,0 +1,24 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+
+group = 'de.b4f'
+version = '1.0.0'
+
+sourceCompatibility = 1.6
+targetCompatibility = 1.6
+
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+repositories {
+    mavenCentral()
+}
+
+// workaround for gradle bug. no debug var symbols in grade 1-09m
+tasks.withType(Compile) { options.compilerArgs = ["-g:source,lines,vars"] }
+
+dependencies {
+    compile 'com.googlecode.disruptor:disruptor:2.8'
+    compile 'com.google.guava:guava:11.0.2'
+
+    testCompile 'junit:junit:4.8.1'
+}
