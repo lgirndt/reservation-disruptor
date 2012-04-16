@@ -29,9 +29,6 @@ public class ReservationEventHandler implements EventHandler<UnitEvent>{
     @Override
     public void onEvent(final UnitEvent event, final long sequence, final boolean endOfBatch) {
         Operation op = operations.get(event.getType());
-
-//        System.out.println("BUSINESS Seq." + sequence + ", Handle Event " + event);
-
         if(op != null){
             op.handle(event);
         }
