@@ -24,6 +24,10 @@ public class TradingUnit {
         return quantities[STOCK];
     }
 
+    public int getInBasket(){
+        return quantities[BASKET];
+    }
+
     public int reserve(int quantity){
         return moveQuantities(quantity, STOCK, BASKET);
     }
