@@ -2,8 +2,6 @@ package de.b4f.reservation.handlers;
 
 import java.util.Map;
 
-import javax.annotation.Nullable;
-
 import com.google.common.base.Function;
 import com.google.common.collect.Maps;
 import com.lmax.disruptor.EventHandler;
@@ -19,7 +17,7 @@ public class ReservationEventHandler implements EventHandler<UnitEvent>{
     public ReservationEventHandler(final Iterable<Operation> operations) {
         this.operations = Maps.uniqueIndex(operations,new Function<Operation, EventType>() {
             @Override
-            public EventType apply(@Nullable final Operation operation) {
+            public EventType apply(final Operation operation) {
                 return operation.handles();
             }
         });
