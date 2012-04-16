@@ -34,6 +34,8 @@ public class PipelineTest {
     public void setUp() throws Exception {
         random = new Random();
 
+        System.out.println("Benchmark on " + ITERATIONS + " iterations.");;
+
         latch = new CountDownLatch(ITERATIONS + MAX_UNITS);
 
         UnitStore unitStore = new UnitStore();
@@ -49,11 +51,13 @@ public class PipelineTest {
 
     @Test
     public void disruptorPerformance() throws InterruptedException {
+        System.out.println("Disruptor");
         runTest(disruptorPipeline, latch);
     }
 
     @Test
     public void queuePerformance() throws InterruptedException {
+        System.out.println("Queue");
         runTest(queuedPipeline, latch);
     }
 
