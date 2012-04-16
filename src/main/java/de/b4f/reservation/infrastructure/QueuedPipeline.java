@@ -54,9 +54,6 @@ public class QueuedPipeline implements Pipeline {
 
         @Override
         public void run() {
-
-            System.out.println("running thread.");
-
             try {
                 List<UnitEvent> events = Lists.newLinkedList();
                 while (true) {
