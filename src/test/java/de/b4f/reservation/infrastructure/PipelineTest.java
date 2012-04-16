@@ -34,7 +34,7 @@ public class PipelineTest {
     public void setUp() throws Exception {
         random = new Random();
 
-        System.out.println("Benchmark on " + ITERATIONS + " iterations.");;
+        System.out.println("Benchmark on " + ITERATIONS + " iterations.");
 
         latch = new CountDownLatch(ITERATIONS + MAX_UNITS);
 
